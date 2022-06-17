@@ -26,12 +26,4 @@ export class RoomsService {
     }
     return this.http.get<Rooms[]>(`${this.bazeUrl}/?title=${term}`, {headers: this.httpHeaders})
   }
-
-  searchSelectedRooms(term: string): Observable<Rooms[]> {
-    if (!term.trim()) {
-      // if not search term, return empty hero array.
-      return of([]);
-    }
-    return this.http.get<Rooms[]>(`${this.bazeUrl}/?room_type=${term}`, {headers: this.httpHeaders})
-  }
 }

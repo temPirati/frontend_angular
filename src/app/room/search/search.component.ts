@@ -11,20 +11,14 @@ export class SearchComponent implements OnInit {
 
   ngOnInit(): void {
   }
-  enteredSerachValue: string = '';
+  enteredSearchValue: string = '';
   selectedOptionValue: string = '';
 
   @Output()
   searchTextChanged: EventEmitter<string> = new EventEmitter<string>();
 
   onSerachTextChanged(){
-    this.searchTextChanged.emit(this.enteredSerachValue);
+    this.searchTextChanged.emit(this.enteredSearchValue);
   }
 
-  @Output()
-  selectedOptionChanged: EventEmitter<string> = new EventEmitter<string>();
-
-  onSelectedOptionChanged(){
-    this.selectedOptionChanged.emit(this.selectedOptionValue);
-  }
 }

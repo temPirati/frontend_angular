@@ -2,11 +2,10 @@
   <span>Search</span>
   <div class="row">
     <div class="col-md-4">
-      <input type="text" [(ngModel)]="enteredSerachValue" (input)="onSerachTextChanged()" class="form-control">
+      <input type="text" [(ngModel)]="enteredSearchValue" (input)="onSerachTextChanged()" class="form-control">
     </div>
     <div>
-
-      <select [(ngModel)]="selectedOptionValue" (input)="onSelectedOptionChanged()" class="form-control">
+      <select [(ngModel)]="selectedOptionValue" class="form-control">
         <option class="h5">conference</option>
         <option class="h5">meeting</option>
       </select>
