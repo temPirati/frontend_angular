@@ -1,0 +1,22 @@
+<form [formGroup]="reservationForm" (ngSubmit)="onSubmit()" class="form-control">
+
+  <button type="button" mat-raised-button color="accent" class="form-control btn btn-success" style="max-width: 70px" (click)="addReservation()"><mat-icon matTooltip="Add a new Room">add</mat-icon></button>
+
+
+  <div *ngFor="let u of ReservationArray.controls; index as i">
+
+    <span>Room {{ i + 1 }}</span> &nbsp; &nbsp;
+    <div class="row">
+      <div class="col-10">
+        <app-reservation-single-form [inputFormGroup]="$any(u)"></app-reservation-single-form>
+      </div>
+      <div class="col-2">
+        <button mat-raised-button class="form-control btn btn-danger" (click)="removeRoom(i)"><mat-icon>delete</mat-icon></button>
+      </div>
+    </div>
+
+
+  </div>
+
+  <button type="submit" class="form-control btn btn-primary" mat-raised-button color="accent" style="max-width: 100px">Submit</button>
+</form>

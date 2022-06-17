@@ -1,0 +1,39 @@
+<form [formGroup]="inputFormGroup" >
+  <div class="form-group mx-2 p-3 border border-primary">
+    <div class="row">
+      <div class="col-6">
+        <label for="user_id">Chose the Person</label>
+        <select class="mr-sm-2 h5 my-4"  id="user_id" name="user_id" formControlName="user_id">
+          <option class="h5" *ngFor="let user of users" value="{{user.id}}">{{user.username}}</option>
+        </select>
+      </div>
+    </div>
+    <div class="row">
+      <div class='col-sm-6'>
+        <div class="form-group">
+          <div class='input-group date' id='datetimepicker1'>
+            <label for="start" >Start DateTime</label>
+            <input type='datetime-local' class="form-control" id='start' formControlName="start" />
+            <span class="input-group-addon">
+               <span class="glyphicon glyphicon-calendar"></span>
+               </span>
+          </div>
+        </div>
+      </div>
+      <!--      <script type="text/javascript">-->
+      <!--        $(function () {-->
+      <!--          $('#datetimepicker1').datetimepicker();-->
+      <!--        });-->
+      <!--      </script>-->
+
+      <div class="col-3">
+        <label for="duration_hours">Duration Hours</label>
+        <input type="number" id="duration_hours" formControlName="duration_hours">
+      </div>
+      <div class="col-3">
+        <label for="duration_minutes">Duration Minutes</label>
+        <input type="number" id="duration_minutes" formControlName="duration_minutes">
+      </div>
+    </div>
+  </div>
+</form>

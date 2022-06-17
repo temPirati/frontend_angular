@@ -1,0 +1,29 @@
+<form [formGroup]="roomUpdateForm" (ngSubmit)="updateRoom()" id="room">
+  <input type="number" formControlName="id" style="display: none">
+  <div class="form-group mx-2 p-3 border border-primary">
+    <div class="row">
+      <div class="col-md-8">
+        <label for="title">Title</label>
+        <input class="form-control" type="text" id="title" name="title" formControlName="title">
+      </div>
+      <div class="col-md-2 float-end">
+        <label for="room_type">Status</label>
+        <select class="form-control"  id="room_type" name="room_type" formControlName="room_type">
+          <option class="h5">conference</option>
+          <option class="h5">meeting</option>
+        </select>
+      </div>
+      <div class="col-md-2 float-end">
+        <label for="capacity">Capacity</label>
+        <input type="number" id="capacity" class="form-control" formControlName="capacity"   >
+      </div>
+
+    </div>
+    <label for="description">Description</label>
+    <textarea class="form-control"  rows="10" type="textfield" id="description" name="description" formControlName="description"></textarea>
+
+    <input class="form-control" (change)="onChange($event)"  type="file" >
+
+    <button [disabled]="!roomUpdateForm.valid" class="btn btn-primary mt-3" mat-raised-button type="submit">Post</button>
+  </div>
+</form>

@@ -1,0 +1,15 @@
+<div class="serach-container my-5">
+  <span>Search</span>
+  <div class="row">
+    <div class="col-md-4">
+      <input type="text" [(ngModel)]="enteredSerachValue" (input)="onSerachTextChanged()" class="form-control">
+    </div>
+    <div>
+
+      <select [(ngModel)]="selectedOptionValue" (input)="onSelectedOptionChanged()" class="form-control">
+        <option class="h5">conference</option>
+        <option class="h5">meeting</option>
+      </select>
+    </div>
+  </div>
+</div>

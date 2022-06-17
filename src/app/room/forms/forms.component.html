@@ -1,0 +1,25 @@
+<form [formGroup]="roomForm" (ngSubmit)="onSubmit()" class="form-control">
+  <div class="row">
+    <div class="col-2 shto ">
+      <h1 class="text-muted mt-3">Shto Dhoma</h1>
+    </div>
+    <button type="button" mat-raised-button color="accent" class="form-control btn btn-success " style="max-width: 70px" (click)="addRoom()"><mat-icon matTooltip="Add a new Room">add</mat-icon></button>
+  </div>
+
+  <div *ngFor="let u of RoomsArray.controls; index as i">
+
+    <span class="h5 my-5">Room No. {{ i + 1 }}</span> &nbsp; &nbsp;
+    <div class="row">
+      <div class="col-10">
+        <app-fields [inputFormGroup]="$any(u)"></app-fields>
+      </div>
+      <div class="col-2">
+        <button mat-raised-button class="form-control btn btn-danger" (click)="removeRoom(i)"><mat-icon>delete</mat-icon></button>
+      </div>
+    </div>
+
+
+  </div>
+
+  <button type="submit" class="form-control btn btn-primary my-4" mat-raised-button color="accent" style="max-width: 100px">Submit</button>
+</form>

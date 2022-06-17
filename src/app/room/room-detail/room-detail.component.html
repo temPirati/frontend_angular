@@ -1,0 +1,56 @@
+<div class="container mt-5">
+  <div class="row bg-light">
+    <div class="col-md-8">
+      <h2 class="m-2"><strong>{{room.title}}</strong></h2>
+      <h5 class="m-2 text-end">Room type: {{room.room_type}}</h5>
+
+    </div>
+    <div class="col-md-2">
+      <button type="button" class="float-end btn-danger btn my-2" (click)="delete(room.id)">
+        DELETE
+      </button>
+      <button type="button" class="mx-2 float-end btn-primary  btn my-2"  title="edit" (click)="edit(room.id)">Edit</button>
+    </div>
+    <div class="col-md-2">
+      <button type="button" class="mx-2 float-end btn-success  btn my-2"  title="edit" (click)="createReservations()">Reserve</button>
+    </div>
+  </div>
+  <div class="row">
+    <small class="text-muted h5 capacity">Capacity:{{room.capacity}}</small>
+  </div>
+    <div class="card-body mb-5">
+      <div class="row mb-5">
+        <div class="col-3 exe">
+          <div class="row"><small class="h3 text-muted">Room Type</small></div>
+          <div class="row"><small class="h5">{{ room.room_type }}</small></div>
+        </div>
+        <div class="col-8">
+          <div class="row"><small class="h3 text-muted">Description</small></div>
+          <div class="row"><small class="h5">{{ room.description}}</small></div>
+        </div>
+      </div>
+      <table class = "table mt-5">
+        <tr>
+          <th class="col-2" >Id</th>
+          <th class="col-5" >Start Time</th>
+          <th class="col-5" >End Time</th>
+
+        </tr>
+        <tr *ngFor="let reservation of room.reservations" (click)="editoReservation(reservation.id)">
+          <th class="col-2">
+            <h3 class="text-muted"><strong>{{reservation.id}}</strong></h3>
+          </th>
+          <td class="col-4">
+            <h3 class="text-muted"><strong>{{reservation.start}}</strong></h3>
+          </td>
+          <td class="col-4">
+            <h3 class="text-muted"><strong>{{reservation.end}}</strong></h3>
+          </td>
+          <td class="col-2">
+            <button class="btn btn-danger" (click)="deleteReservation(reservation.id)">X</button>
+          </td>
+        </tr>
+      </table>
+    </div>
+
+</div>
