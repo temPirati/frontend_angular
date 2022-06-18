@@ -6,7 +6,7 @@
     </div>
     <div>
 
-      <select [(ngModel)]="selectedOptionValue" (input)="onSelectedOptionChanged()" class="form-control">
+      <select [(ngModel)]="selectedOptionValue" (change)="onSelectedOptionChanged()" class="form-control">
         <option class="h5">conference</option>
         <option class="h5">meeting</option>
       </select>

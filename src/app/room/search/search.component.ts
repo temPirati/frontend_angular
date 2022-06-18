@@ -17,6 +17,7 @@ export class SearchComponent implements OnInit {
   @Output()
   searchTextChanged: EventEmitter<string> = new EventEmitter<string>();
 
+
   onSerachTextChanged(){
     this.searchTextChanged.emit(this.enteredSerachValue);
   }

@@ -40,8 +40,8 @@ export class RoomsComponent implements OnInit {
 
   selectText: string = "";
 
-  onSelectOption(selectValue: string){
-    this.selectText = selectValue;
+  onSelectOption(selectValue: any){
+    this.selectText = selectValue.target.value;
     this.roomService.searchSelectedRooms(this.searchText)
   }
 
