@@ -65,7 +65,9 @@ export class ReservationUpdateComponent implements OnInit {
     this.reservation = this.rezervationForm.value;
     this.reservationUpdateService.updateReservation(id, this.reservation).subscribe((responce: any) => {
       console.log(responce);
-      this.router.navigate([this.reservation.room_id]);
+      this.router.navigate(['room', this.reservation.room_id]).then(
+        window.location.reload
+      );
     },
       error => {
         if(error.status == 400){

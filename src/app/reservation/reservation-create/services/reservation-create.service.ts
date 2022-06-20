@@ -2,14 +2,15 @@ import { Injectable } from '@angular/core';
 import {HttpClient, HttpHeaders} from "@angular/common/http";
 import {Reservation, Users} from "../../../models";
 import {Observable} from "rxjs";
+import {environment} from "../../../../environments/environment";
 
 @Injectable({
   providedIn: 'root'
 })
 export class ReservationCreateService {
 
-  private bazeUrl = 'http://127.0.0.1:8000/rooms/reserve/';
-  private usersUrl = 'http://127.0.0.1:8000/rooms/users/';
+  private bazeUrl = environment.bazeUrl + 'reserve/';
+  private usersUrl = environment.bazeUrl + 'users/';
   httpHeaders = new HttpHeaders({'Content-Type': 'aplication/json'});
 
   public saveReservation(reservation: Reservation): Observable<Reservation>{

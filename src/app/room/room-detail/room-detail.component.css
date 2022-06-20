@@ -4,3 +4,7 @@
 .capacity{
   border-bottom: solid blueviolet 1px;
 }
+.imgBorder{
+  padding: 5px;
+  border: solid blue 1px ;
+}

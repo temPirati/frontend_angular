@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import {HttpClient, HttpHeaders} from "@angular/common/http";
 import {Reservation} from "../../../models";
 import { Observable, of } from 'rxjs';
+import {environment} from "../../../../environments/environment";
 
 @Injectable({
   providedIn: 'root'
@@ -9,8 +10,8 @@ import { Observable, of } from 'rxjs';
 export class ReservationUpdateService {
 
   httpHeaders = new HttpHeaders({'Content-Type': 'aplication/json'});
-  private bazeUrl = 'http://127.0.0.1:8000/rooms/reservation/'
-  private DateUrl = 'http://127.0.0.1:8000/rooms/reservationdata/'
+  private bazeUrl = environment.bazeUrl + 'reservation/'
+  private DateUrl = environment.bazeUrl + 'reservationdata/'
 
   constructor(private http: HttpClient) { }
 

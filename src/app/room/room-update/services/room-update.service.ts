@@ -2,12 +2,13 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable, of } from 'rxjs';
 import {Room} from "../../../models";
+import { environment } from "../../../../environments/environment";
 
 @Injectable({
   providedIn: 'root'
 })
 export class RoomUpdateService {
-  private bazeUrl = 'http://127.0.0.1:8000/rooms/';
+  private bazeUrl = environment.bazeUrl;
   httpHeaders = new HttpHeaders({'Content-Type': 'aplication/json'});
   constructor(
     private http: HttpClient,
