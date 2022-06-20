@@ -5,7 +5,8 @@
 
 export const environment = {
   production: false,
-  bazeUrl: 'http://127.0.0.1:8000/rooms/'
+  bazeUrl: 'http://127.0.0.1:8000/rooms/',
+  apiUrl: 'http://127.0.0.1:8000/'
 };
 
 /*

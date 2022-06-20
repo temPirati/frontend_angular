@@ -20,6 +20,7 @@ import {MatInputModule} from "@angular/material/input";
 import {MatIconModule} from "@angular/material/icon";
 import { ReservationFormsComponent } from './reservation/reservation-forms/reservation-forms.component';
 import { ReservationSingleFormComponent } from './reservation/reservation-forms/reservation-single-form/reservation-single-form.component';
+import {UserModule} from "./user/user.module";
 
 
 @NgModule({
@@ -47,6 +48,7 @@ import { ReservationSingleFormComponent } from './reservation/reservation-forms/
         BrowserAnimationsModule,
         MatInputModule,
         MatIconModule,
+        UserModule,
     ],
   providers: [],
   bootstrap: [AppComponent]

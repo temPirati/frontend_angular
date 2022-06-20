@@ -49,3 +49,18 @@ export interface Users{
   "id": number;
   "username": string;
 }
+
+export interface User{
+  "id": number;
+  "username": string;
+  "first_name": string;
+  "email": string;
+  "password": string;
+}
+export class UserCreate implements User{
+  "id": number;
+  "username": string;
+  "first_name": string;
+  "email": string;
+  "password": string;
+}

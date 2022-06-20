@@ -1,8 +1,8 @@
 import {Component, OnInit} from '@angular/core';
 import { RoomCreateService } from "./services/room-create.service";
 import { RoomCreate} from "../../models";
-import {FormBuilder, FormControl, FormGroup, Validators} from "@angular/forms";
-import {ActivatedRoute, Router} from "@angular/router";
+import { FormControl, FormGroup, Validators} from "@angular/forms";
+import { Router} from "@angular/router";
 
 
 @Component({
@@ -61,7 +61,7 @@ export class RoomCreateComponent implements OnInit {
     }
   }
 
-  constructor(private roomCreateService: RoomCreateService, private router: Router, private fb: FormBuilder) { }
+  constructor(private roomCreateService: RoomCreateService, private router: Router) { }
 
   ngOnInit(): void {
   }
