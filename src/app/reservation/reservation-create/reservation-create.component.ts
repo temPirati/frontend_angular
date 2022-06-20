@@ -26,10 +26,8 @@ export class ReservationCreateComponent implements OnInit {
   })
 
   saveReservation(): void {
-    console.warn(this.reservationForm.value);
     this.reservation = this.reservationForm.value;
     this.reservationCreateService.saveReservation(this.reservation).subscribe((response: any) => {
-      console.log(response)
         this.router.navigate(['room', this.reservation.room_id]).then(() => {
           window.location.reload();
         });
