@@ -18,7 +18,6 @@ export class RoomDetailService {
   }
 
   deleteRoom(id: number): Observable<Room> {
-    console.log("room id: " + id)
     return this.http.delete<Room>(this.bazeUrl + id, {headers:this.httpHeaders})
   }
 

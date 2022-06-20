@@ -35,6 +35,7 @@ export class RoomDetailComponent implements OnInit {
     this.router.navigate(['room/edit',id]);
   }
   delete = (id :number) => {
+    console.log('delete', id)
     if(confirm("Are you sure to delete thi post")) {
       this.roomDetailService.deleteRoom(id).subscribe(room => this.room = room);
       this.router.navigate(['rooms']).then(
