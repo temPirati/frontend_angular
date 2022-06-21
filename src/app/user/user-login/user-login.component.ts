@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import {UserCreate} from "../../models";
-import {FormControl, FormGroup, Validators} from "@angular/forms";
-import {UserAuthService} from "../services/user-auth.service";
-import {Route} from "@angular/router";
+import { UserCreate } from "../../models";
+import { FormControl, FormGroup, Validators} from "@angular/forms";
+import { UserAuthService } from "../services/user-auth.service";
+import { Route } from "@angular/router";
 
 @Component({
   selector: 'app-user-login',
@@ -13,7 +13,7 @@ export class UserLoginComponent implements OnInit {
 
   constructor(
     private userAuthService: UserAuthService,
-    private router: Route,
+    // private router: Route,
     ) { }
 
   ngOnInit(): void {
@@ -29,6 +29,6 @@ export class UserLoginComponent implements OnInit {
     this.user = this.singInForm.value
     this.userAuthService.logIn(this.user).subscribe( (responce: any) =>{
     console.log(responce)});
-    // this.router.navigate(['rooms'])
+    // this.router.navigate(['rooms']);
   }
 }

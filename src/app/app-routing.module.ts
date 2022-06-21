@@ -9,6 +9,7 @@ import {ReservationCreateComponent} from "./reservation/reservation-create/reser
 import {ReservationUpdateComponent} from "./reservation/reservation-update/reservation-update.component";
 import {FormsComponent} from "./room/forms/forms.component";
 import {ReservationFormsComponent} from "./reservation/reservation-forms/reservation-forms.component";
+import {UserLoginComponent} from "./user/user-login/user-login.component";
 
 const routes: Routes = [
   { path: '', redirectTo: '/rooms', pathMatch: 'full' },
@@ -20,7 +21,12 @@ const routes: Routes = [
   { path: 'rooms/reserve', component:ReservationCreateComponent },
   { path: 'reservation/:id', component: ReservationUpdateComponent },
   { path: 'room/reserve/:id', component: ReservationFormsComponent },
+  { path: 'user/login/', component: UserLoginComponent },
   { path: '**', redirectTo: '/rooms'},
+  {
+    path: 'User',
+    loadChildren: () => import('./user/user.module')
+  }
 ];
 
 @NgModule({

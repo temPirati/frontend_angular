@@ -1,1 +1,13 @@
-<p>user-login works!</p>
+<form [formGroup]="singInForm" (ngSubmit)="onSubmit()">
+  <div class="row">
+    <h2 class="accordion-header text-muted">Log In</h2>
+  </div>
+  <div class="row">
+    <labe for="username" class="form-control">Username</labe>
+    <input type="text" class="form-control" formControlName="username" id="username" name="username">
+  </div>
+  <div class="row">
+    <labe for="password" class="form-control">Username</labe>
+    <input type="password" class="form-control" formControlName="password" id="password" name="password">
+  </div>
+</form>
