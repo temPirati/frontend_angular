@@ -1,29 +1,21 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { UserLoginComponent } from './user-login/user-login.component';
-import {FormsModule, ReactiveFormsModule} from "@angular/forms";
-import {AppRoutingModule} from "../app-routing.module";
-import {HttpClientModule} from "@angular/common/http";
-import {BrowserModule} from "@angular/platform-browser";
-import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
 
+import { UserRoutingModule } from './user-routing.module';
+import { UserComponent } from './user.component';
+import { UserLoginComponent } from './user-login/user-login.component';
+import {ReactiveFormsModule} from "@angular/forms";
 
 
 @NgModule({
   declarations: [
-    UserLoginComponent,
+    UserComponent,
+    UserLoginComponent
   ],
   imports: [
     CommonModule,
-    ReactiveFormsModule,
-    FormsModule,
-    AppRoutingModule,
-    HttpClientModule,
-    BrowserModule,
-    BrowserAnimationsModule,
-  ],
-  exports: [
-    UserLoginComponent
+    UserRoutingModule,
+    ReactiveFormsModule
   ]
 })
 export class UserModule { }

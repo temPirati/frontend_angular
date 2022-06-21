@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
 import { AppComponent } from './app.component';
 import { RoomsComponent } from './room/rooms/rooms.component';
 import { AppRoutingModule } from './app-routing.module';
@@ -20,7 +19,7 @@ import {MatInputModule} from "@angular/material/input";
 import {MatIconModule} from "@angular/material/icon";
 import { ReservationFormsComponent } from './reservation/reservation-forms/reservation-forms.component';
 import { ReservationSingleFormComponent } from './reservation/reservation-forms/reservation-single-form/reservation-single-form.component';
-import {UserModule} from "./user/user.module";
+// import {UserModule} from "./user/user.module";
 
 
 @NgModule({
@@ -48,7 +47,7 @@ import {UserModule} from "./user/user.module";
         BrowserAnimationsModule,
         MatInputModule,
         MatIconModule,
-        UserModule,
+        // UserModule,
     ],
   providers: [],
   bootstrap: [AppComponent]

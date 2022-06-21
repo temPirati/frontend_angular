@@ -1,8 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { UserCreate } from "../../models";
-import { FormControl, FormGroup, Validators} from "@angular/forms";
-import { UserAuthService } from "../services/user-auth.service";
-import { Route } from "@angular/router";
+import {UserCreate} from "../../models";
+import {FormControl, FormGroup, Validators} from "@angular/forms";
+import {AuthService} from "../services/auth.service";
 
 @Component({
   selector: 'app-user-login',
@@ -12,23 +11,24 @@ import { Route } from "@angular/router";
 export class UserLoginComponent implements OnInit {
 
   constructor(
-    private userAuthService: UserAuthService,
-    // private router: Route,
-    ) { }
+    private authService: AuthService
+  ) { }
 
-  ngOnInit(): void {
-  }
-  user = new UserCreate();
+  user = new UserCreate()
 
-  singInForm = new FormGroup({
-    'username': new FormControl('', Validators.required),
-    'password': new FormControl('', Validators.required)
+  logInForm = new FormGroup({
+    username: new FormControl('', Validators.required),
+    password: new FormControl('', Validators.required)
   })
 
   onSubmit(){
-    this.user = this.singInForm.value
-    this.userAuthService.logIn(this.user).subscribe( (responce: any) =>{
-    console.log(responce)});
-    // this.router.navigate(['rooms']);
+    this.user = this.logInForm.value
+    console.log(this.user)
+    this.authService.userLogIn(this.user).subscribe( (responce: any) =>
+    console.log(responce))
   }
+
+  ngOnInit(): void {
+  }
+
 }
